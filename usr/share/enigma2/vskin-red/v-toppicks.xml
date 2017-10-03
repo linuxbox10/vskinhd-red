@@ -1,0 +1,22 @@
+<skin>
+	<screen name="fake-tv-screens">
+		<ePixmap pixmap="v-backgrounds/description-box-bg.png" position="0,0" alphatest="blend" size="910,208" zPosition="-1" />
+		
+		<panel position="86,33" size="168,148">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson1.png" position="0,0" size="168,126" alphatest="blend" zPosition="1" />
+			<eLabel text="TOP PICK" position="0,126" size="168,22" font="Regular;19" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" halign="center" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="274,33" size="168,148">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson2.png" position="0,0" size="168,126" alphatest="blend" zPosition="1" />
+			<eLabel text="IN MY SHOWS" position="0,126" size="168,22" font="Regular;19" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" halign="center" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="462,33" size="168,148">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson3.png" position="0,0" size="168,126" alphatest="blend" zPosition="1" />
+			<eLabel text="YOU MIGHT LIKE" position="0,126" size="168,22" font="Regular;19" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" halign="center" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="650,33" size="168,148">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson4.png" position="0,0" size="168,126" alphatest="blend" zPosition="1" />
+			<eLabel text="WATCH NOW" position="0,126" size="168,22" font="Regular;19" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" halign="center" transparent="1" zPosition="2" />
+		</panel>
+	</screen>
+</skin>

@@ -1,0 +1,20 @@
+<skin>
+	<screen name="fake-tv-screens">
+	
+		<panel position="11,28" size="202,154">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson3.png" position="0,0" size="202,154" alphatest="blend" zPosition="-2" />
+		</panel>
+		<panel position="226,28" size="116,154">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson1.png" position="0,0" size="116,154" alphatest="blend" zPosition="-2" />
+		</panel>
+		<panel position="355,28" size="202,154">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson4.png" position="0,0" size="202,154" alphatest="blend" zPosition="-2" />
+		</panel>
+		<panel position="570,28" size="116,154">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson2.png" position="0,0" size="116,154" alphatest="blend" zPosition="-2" />
+		</panel>
+		<panel position="699,28" size="202,154">
+			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson5.png" position="0,0" size="202,154" alphatest="blend" zPosition="-2" />
+		</panel>
+	</screen>
+</skin>

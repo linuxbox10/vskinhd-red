@@ -1,0 +1,270 @@
+<skin>
+	<!-- Skin: Vskin HD(2016) by kiddac -->
+	<!-- This skin is not based on the works of any other skin. All graphics, icons, buttons, screens are my own hard work-->
+	<!-- If using any elements/graphics from this skin in your own work please reference me correctly -->
+        <!-- ****************************************************************************************************** -->
+	<!-- If you would like to buy me a beer for my efforts please use the paypal links on http://slyk1hd.yolasite.com/ -->
+	<!-- ****************************************************************************************************** -->
+	<output id="0">
+		<resolution xres="1280" yres="720" bpp="32" />
+	</output>
+	
+	<!-- includes -->
+	<include filename="/usr/share/enigma2/vskin-red/v-button-templates.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-main-templates.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-menu-templates.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-wizards.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-general.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-CCcamInfo.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-ChannelSelection.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-epg.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-eventview.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-infobar.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-infopanel.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-information.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-movies.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-network.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-plugins.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-timers.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-non-common.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/v-vix.xml" />
+	<include filename="/usr/share/enigma2/vskin-red/extras.xml" />
+        <!-- <include filename="/usr/share/enigma2/vskin-red/v-toppicks.xml" /> -->
+	<!-- <include filename="/usr/share/enigma2/vskin-red/v-toppicks2.xml" /> -->
+	
+        <!-- fonts -->
+	<fonts>
+	
+                <!-- vskin fonts -->
+		<font name="Regular" filename="/usr/share/enigma2/vskin-red/fonts/VSkinRedCond.ttf" scale="100" />
+		<font name="Console" filename="/usr/share/enigma2/vskin-red/fonts/lucon.ttf" scale="100" />
+		<font name="Heading" filename="/usr/share/enigma2/vskin-red/fonts/VSkinRedBold.ttf" scale="100" />
+		<font name="Bold"    filename="/usr/share/enigma2/vskin-red/fonts/VSkinRedBold.ttf" scale="100" />
+		
+		<!-- default skin fonts -->
+		<font name="Subtitlefont" filename="/usr/share/fonts/nmsbd.ttf" scale="100" />
+		<font name="LCD"          filename="/usr/share/fonts/lcd.ttf" scale="100" />
+	
+		
+
+		
+                <!-- font sizes -->
+                <alias name="Body" font="Regular" size="22" height="30" />
+		<alias name="TextNormal" font="Regular" size="22" height="30" />
+		
+		<!-- context menu -->
+		<alias name="ChoiceList" font="Regular" size="22" height="30" />
+		
+                <!-- plugins -->
+		<alias name="PluginBrowser0" font="Regular" size="20" height="30" />        <!-- plugin name -->
+		<alias name="PluginBrowser1" font="Regular" size="14" height="20" />        <!-- plugin description -->
+		
+                <!-- help menus -->
+		<alias name="HelpMenuList" font="Regular" size="22" height="30" />
+		
+                <!-- virtual keyboard -->
+		<alias name="VirtualKeyboard" font="Regular" size="26" height="45" />
+		
+                <!-- used on tuner config - positioner -->
+		<alias name="SelectionList" font="Regular" size="20" height="30" />
+		
+                <!-- locationbox i.e movie file location  -->
+		<alias name="FileList" font="Regular" size="20" height="30" />
+		<alias name="FileListMulti" font="Regular" size="20" height="30" />
+	</fonts>
+	
+        <!-- default colour list -->
+	<colors>
+		<color name="transparent" value="#ff000000" />
+		<color name="transpBlack" value="#80000000"/>
+		<color name="transpWhite" value="#80ffffff"/>
+		<color name="black" value="#00000000" />
+		<color name="red" value="#00ff0000" />
+		<color name="green" value="#307e13" />
+		<color name="blue" value="#000064c7"/>
+		<color name="yellow" value="#00bab329"/>
+		<color name="white" value="#00ffffff" />
+		<color name="zapgreen" value="#00007f0e" />
+		<color name="verydarkgrey" value="#00555555" />
+		<color name="darkgrey" value="#279e9fa4"/>
+		<color name="grey" value="#008c8c93" />
+		
+		<!-- legacy vskin colours -->
+		<color name="vred" value="#00ff0000" />
+		<color name="textCol1" value="#00b58aa6" />
+		<color name="textCol2" value="#00878889" />
+		<color name="bgDark" value="#000c0709" />
+		<color name="bgMid" value="#0024111a" />
+		<color name="selectedBG" value="#00670004" />
+		<color name="messageBG" value="#1a000000" />
+		<color name="epgBG" value="#002e1d2f" />
+		<color name="infobarBG" value="#002e1d2f" />     <!-- dark purple -->
+
+                <!-- new vskin colours -->
+		<color name="black50"                             value="#80000000" />
+		<color name="black70"                             value="#49000000" />
+		<color name="black80"                             value="#34000000" />
+		<color name="black90"                             value="#1a000000" />	
+
+                <color name="colour1"                             value="white" />
+		<color name="colour2"                             value="#00c58d88" />     <!-- pink -->
+		<color name="colour3"                             value="#00a0adae" />     <!-- grey -->
+	
+		
+		<color name="fg1"                                 value="colour1" />       <!-- white -->
+		<color name="fg2"                                 value="colour2" />       <!-- pink -->
+		<color name="fg3"                                 value="colour3" />       <!-- grey -->
+		
+		<color name="bg-tl"                               value="#00020000" />
+		<color name="bg-tm"                               value="#00080101" />
+		<color name="bg-tr"                               value="#000a0202" />
+		<color name="bg-ml"                               value="#00590d0d" />
+		<color name="bg-mm"                               value="#00590d0d" />
+		<color name="bg-mr"                               value="#00590d0d" />
+		<color name="bg-bl"                               value="#00530d0d" />
+		<color name="bg-bm"                               value="#00590d0d" />
+		<color name="bg-br"                               value="#00410909" />
+		<color name="bg-mm-dark"                          value="#00240505" />
+
+                <color name="button-top"                          value="colour3" />       <!-- pink -->
+		<color name="button-bot"                          value="colour3" />       <!-- grey -->
+                <color name="button-bg"                           value="#00280404" />
+                <color name="button-top-bg"                       value="#00340c0d" />
+
+		<color name="title"                               value="colour1" />       <!-- white -->
+ 	        <color name="tv-label"                            value="#00333333" />     <!--dark grey -->
+ 	        
+		<color name="selected"                            value="colour1" />       <!-- white -->
+ 	        <color name="selected-text-bg"                    value="#00891d1d" />     <!-- dark red -->
+ 	        <color name="selected-gfx-bg"                     value="#00891d1d" />     <!-- dark red -->
+ 	        <color name="marked"                              value="red" />
+ 	        <color name="selected-marked"                     value="red" />    		
+
+                <color name="messagebox-bg"                       value="black90" />       <!-- 90% black -->
+                <color name="messagebox-title"                    value="colour1" />       <!-- white -->
+                <color name="messagebox-title-bg"                 value="black90" />       <!-- 90% black -->
+                <color name="messagebox-text"                     value="colour1" />       <!-- white -->
+                <color name="messagebox-list"                     value="colour1" />       <!-- white -->
+                
+                <color name="progress"                            value="colour2" />       <!-- pink -->
+                <color name="progress-selected"                   value="colour2" />       <!-- pink -->
+		<color name="progress-border"                     value="white" />       <!-- grey -->
+		<color name="progress-border-selected"            value="white" />       <!-- grey -->
+
+               	<color name="tvguide"                             value="colour2"  />      <!-- pink -->
+                <color name="marked"                              value="red" />           <!-- red -->
+		<color name="marked-selected"                     value="red" />           <!-- red -->
+
+                <color name="timelineBG"                          value="black" />	
+                <color name="timelinetop"                         value="colour2" />       <!-- pink -->
+               	
+                <color name="epgeventbg"                          value="#00561919" />
+		<color name="epgeventbgnow"                       value="#00451314" />
+		<color name="epgservicebg"                        value="#00321211" />
+		<color name="epgservicebgnow"                     value="#00321211" />
+		
+                <color name="infobarHead"                         value="#00541c1c" />	   <!-- dark purple -->
+                <color name="infobarBlack"                        value="black90"/>
+                
+                <color name="playbar"                             value="#605364" />       <!-- light plum -->
+
+                <color name="reboot"                              value="#008d0b0b" />
+
+                <color name="highlightBG"                         value="#00541c1c" />
+	</colors>
+	
+        <windowstyle type="skinned" id="0">
+		<title offset="25,15" font="Regular;24" />
+		<color name="WindowTitleForeground"               color="messagebox-title" />        <!-- message box title -->
+		<color name="WindowTitleBackground"               color="messagebox-title-bg" />     <!-- message box title bg - same colour as graphic title border -->
+		<color name="Background"                          color="messagebox-bg" />           <!-- message box inner background - same colour as graphic borders - scrollbar background -->
+		<color name="LabelForeground"                     color="messagebox-text" />         <!-- message box text - Scrollbar slider -->
+		<color name="ListboxForeground"                   color="messagebox-list" />         <!-- message box list -->
+                <color name="ListboxBackground"                   color="messagebox-bg" />
+ 	        <color name="ListboxSelectedForeground"           color="selected" />                <!-- message box list selected -->
+		<color name="ListboxSelectedBackground"           color="selected-text-bg" />
+		<color name="ListboxMarkedForeground"             color="marked" />                  <!-- message box list marked -->
+		<color name="ListboxMarkedBackground"             color="selected-text-bg" />
+                <color name="ListboxMarkedAndSelectedForeground"  color="selected-marked" />         <!-- message box list marked and selected -->
+		<color name="ListboxMarkedAndSelectedBackground"  color="selected-text-bg" />
+		
+		
+		
+		<!-- menu border -->
+		<borderset name="bsWindow">
+			<pixmap pos="bpTopLeft" filename="screens/b_tl.png" />
+			<pixmap pos="bpTop" filename="screens/b_t.png" />
+			<pixmap pos="bpTopRight" filename="screens/b_tr.png" />
+			<pixmap pos="bpLeft" filename="screens/b_l.png" />
+			<pixmap pos="bpRight" filename="screens/b_r.png" />
+			<pixmap pos="bpBottomLeft" filename="screens/b_bl.png" />
+			<pixmap pos="bpBottom" filename="screens/b_b.png" />
+			<pixmap pos="bpBottomRight" filename="screens/b_br.png" />
+		</borderset>
+	</windowstyle>
+	
+        <windowstyle type="skinned" id="1">
+		<color name="WindowTitleForeground"               color="messagebox-title" />        <!-- message box title -->
+		<color name="WindowTitleBackground"               color="messagebox-title-bg" />     <!-- message box title bg - same colour as graphic title border -->
+		<color name="Background"                          color="messagebox-bg" />           <!-- message box inner background - same colour as graphic borders - scrollbar background -->
+		<color name="LabelForeground"                     color="messagebox-text" />         <!-- message box text - Scrollbar slider -->
+		<color name="ListboxForeground"                   color="messagebox-list" />         <!-- message box list -->
+                <color name="ListboxBackground"                   color="messagebox-bg" />
+ 	        <color name="ListboxSelectedForeground"           color="selected" />                <!-- message box list selected -->
+		<color name="ListboxSelectedBackground"           color="selected-text-bg" />
+		<color name="ListboxMarkedForeground"             color="marked" />                  <!-- message box list marked -->
+		<color name="ListboxMarkedBackground"             color="selected-text-bg" />
+                <color name="ListboxMarkedAndSelectedForeground"  color="selected-marked" />         <!-- message box list marked and selected -->
+		<color name="ListboxMarkedAndSelectedBackground"  color="selected-text-bg" />
+	</windowstyle>
+	
+	<parameters>
+		<!-- <parameter name="ChoicelistDash" value="0,2,650,42"/> -->
+		<parameter name="ChoicelistName" value="45,1,790,30"/>
+                <parameter name="ChoicelistIcon" value="5,2,35,28" />
+		<!--	<parameter name="ConfigListSeperator" value="350"/>  -->
+		<parameter name="AutotimerEnabledIcon" value="10,2,25,24" />        <!-- Autotimer tick box -->
+		<parameter name="AutotimerRecordIcon" value="40,5,20,20" />         <!-- Autotimer Record Icon -->
+		<parameter name="VirtualKeyboard" value="45,45" />                  <!-- virtual keyboard keyicon size -->
+		<parameter name="PluginBrowserIcon" value="86,5,100,40" />          <!-- plugins main icon -->
+		<parameter name="PluginBrowserName" value="196,3,30" />             <!-- plugins name -->
+		<parameter name="PluginBrowserDescr" value="196,28,20" />           <!-- plugins description -->
+		<parameter name="PluginBrowserDownloadIcon" value="86,0,60,50" />   <!-- plugins + - boxed icon -->
+		<parameter name="PluginBrowserDownloadName" value="156,3,30" />     <!-- plugins download name - see font alias PluginBrowser0 -->
+		<parameter name="PluginBrowserDownloadDescr" value="156,28,20" />   <!-- plugins download description -see font alias PluginBrowser1 -->
+		<!--
+                 <parameter name="HelpMenuListExtHlp0" value="0,0,795,28"/>
+		<parameter name="HelpMenuListExtHlp1" value="0,27,795,23"/>
+		-->
+		<parameter name="HelpMenuListHlp" value="10,8,795,30" />            <!-- help menu text -->
+		<parameter name="SelectionListDescr" value="50,2,750,30" />
+		
+                <!-- used on tuner config - positioner -->
+		<parameter name="SelectionListLock" value="10,2,25,24" />
+		<parameter name="SelectionListLockOff" value="10,2,25,24" />
+		
+                <!-- example is software management - backup list -->
+		<parameter name="FileListName" value="40,2,750,30" />
+		<parameter name="FileListIcon" value="10,5,25,24" />
+		<parameter name="FileListMultiName" value="75,2,715,30" />
+		<parameter name="FileListMultiIcon" value="45,5,25,24" />
+		<parameter name="FileListMultiLock" value="10,2,25,24" />
+		<!--
+                <parameter name="ConfigListSeperator" value="350"/>
+
+		<parameter name="PicturePlayerThumb" value="35,190,30,200,20,14"/>
+		
+		 <parameter name="DreamexplorerName" value="40,2,660,26"/>
+		<parameter name="DreamexplorerIcon" value="10,3,22,22"/>
+		
+                <parameter name="PlayListName" value="25,0,675,30"/>
+		<parameter name="PlayListIcon" value="5,7,16,16"/>
+		
+		<parameter name="ServiceInfo" value="0,0,300,30"/>
+		<parameter name="ServiceInfoLeft" value="0,0,300,25"/>
+		<parameter name="ServiceInfoRight" value="300,0,600,25"/>
+		-->
+	</parameters>
+</skin>
+
+

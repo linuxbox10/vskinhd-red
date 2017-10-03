@@ -1,0 +1,116 @@
+
+<skin>
+	<!-- menu templates -->
+	
+	<screen name="menuleft">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/main-menu-bg.png" position="100,251" size="552,469" alphatest="blend" />
+		<widget source="menu" render="Listbox" position="108,285" size="536,435" font="Regular;28" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-536-lr.png" backgroundPixmap="v-selectbars/selectbar-bg.png" itemHeight="50" scrollbarMode="showNever" enableWrapAround="1" alphatest="blend" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [	
+                                MultiContentEntryText(pos = (92,0), size = (401,50), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0	) ],
+				"fonts": [gFont("Regular",28)],
+				"itemHeight": 50
+				}</convert>
+		</widget>
+		<ePixmap pixmap="v-backgrounds/menu-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+	</screen>
+	
+	<!-- menu screens -->
+	<screen name="Menu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent" title="Menu">
+		<panel name="menuleft" />
+	</screen>
+	
+	<screen name="menu_mainmenu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent" title="Main Menu">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/main-menu-bg.png" position="100,251" size="552,469" alphatest="blend" />
+		<widget source="menu" render="Listbox" position="108,285" size="536,435" font="Regular;28" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-536-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" itemHeight="50" scrollbarMode="showNever" enableWrapAround="1" alphatest="blend" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [	
+                                MultiContentEntryText(pos = (92,0), size = (401,50), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0	) ],
+				"fonts": [gFont("Regular",28)],
+				"itemHeight": 50
+				}</convert>
+		</widget>
+		<ePixmap pixmap="v-backgrounds/menu-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+		<!--<eLabel text="menu_mainmenu" position="0,0" size="1280,30" font="Regular;12" backgroundColor="green" zPosition="20" />-->
+	</screen>
+	
+	<screen name="config-template">
+		<widget name="config" textOffset="10,0" position="86,285" size="790,435" font="Regular;24" secondfont="Regular;24" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-1280-square.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" valign="center" enableWrapAround="1" transparent="1" scrollbarMode="showOnDemand" zPosition="2" />
+                <!-- <widget name="config" textOffset="86,0" position="0,285" size="950,435" font="Regular;24" secondfont="Regular;24" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" valign="center" enableWrapAround="1" transparent="1" scrollbarMode="showNever" zPosition="2" />  -->
+	</screen>
+	
+	<screen name="config-template-small">
+		<widget name="config" textOffset="10,0" position="86,285" size="790,435" font="Regular;20" secondfont="Regular;20" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-1280-square.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" valign="center" enableWrapAround="1" transparent="1" scrollbarMode="showOnDemand" zPosition="2" />
+		<!-- <widget name="config" textOffset="86,0" position="0,285" size="950,435" font="Regular;20" secondfont="Regular;20" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" valign="center" enableWrapAround="1" transparent="1" scrollbarMode="showNever" zPosition="2" />  -->
+	</screen>
+	
+	<screen name="setup-template">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" />
+		<panel name="config-template" />
+		<ePixmap pixmap="v-backgrounds/large-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+		
+	</screen>
+	<screen name="description-template">
+		<widget name="description" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+	</screen>
+	<screen name="introduction-template">
+		<widget source="introduction" render="Label" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+	</screen>
+	<screen name="HelpWindow-template">
+		<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="0,0" size="1280,40" alphatest="blend" zPosition="10" />
+	</screen>
+	<screen name="footnote-template">
+		<widget name="footnote" position="922,e-30" size="278,18" font="Regular;14" foregroundColor="fg2" backgroundColor="bg-br" halign="left" transparent="1" valign="center" />
+	</screen>
+	<screen name="VkeyIcon-template">
+		<widget source="VKeyIcon" render="Pixmap" pixmap="v-buttons/key_text.png" position="1163,668" size="38,30" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	<screen name="Setup" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<panel name="description-template" />
+		<panel name="HelpWindow-template" />
+		<panel name="footnote-template" />
+		<panel name="VkeyIcon-template" />
+	</screen>
+	<screen name="VFD_INISetup" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="setup-template" />
+		<panel name="3RGY-Top" />
+	</screen>
+	<screen name="OpenWebifConfig" position="0,0" size="1280,720" title="OpenWebif Configuration" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+	</screen>
+	<screen name="RemoteControlCode" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<panel name="description-template" />
+		<panel name="footnote-template" />
+		<panel name="HelpWindow-template" />
+	</screen>
+	
+	<screen name="setup_recording"  title="Setup" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<!-- <eLabel name="screenname" text="setup_recording" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" />
+		<panel name="config-template-small" />
+		<ePixmap pixmap="v-backgrounds/large-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+		<panel name="2RG-Top-Source" />
+		<panel name="description-template" />
+		<panel name="HelpWindow-template" />
+		<panel name="footnote-template" />
+		<panel name="VkeyIcon-template" />
+	
+	</screen>
+	
+
+	
+	
+
+</skin>
+
+

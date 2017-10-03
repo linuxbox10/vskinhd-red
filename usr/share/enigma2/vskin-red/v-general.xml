@@ -1,0 +1,627 @@
+
+
+<skin>
+	<!-- AudioSelection -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/AudioSelection.py -->
+	<!-- audio button -->
+	<screen name="AudioSelection" position="center,center" size="530,320">
+		<widget name="config" position="80,0" size="400,120" foregroundColor="fg1" backgroundColor="messagebox-bg" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" />
+		<widget source="key_red" render="Pixmap" pixmap="buttons/key_red.png" position="40,0" size="35,28" alphatest="blend" zPosition="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_green" render="Pixmap" pixmap="buttons/key_green.png" position="40,30" size="35,28" alphatest="blend" zPosition="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_yellow" render="Pixmap" pixmap="buttons/key_yellow.png" position="40,60" size="35,28" alphatest="blend" zPosition="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="key_blue" render="Pixmap" pixmap="buttons/key_blue.png" position="40,90" size="35,28" alphatest="blend" zPosition="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="streams" render="Listbox" position="10,125" size="500,180" foregroundColor="fg1" backgroundColor="messagebox-bg" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" >
+			<convert type="TemplatedMultiContent">{"templates":
+				{"default": (30, [
+				MultiContentEntryText(pos = (0, 1), size = (35, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # key,
+				MultiContentEntryText(pos = (20, 1), size = (50, 30), font = 0, flags = RT_HALIGN_LEFT, text = 2), # number,
+				MultiContentEntryText(pos = (80, 1), size = (100, 30), font = 0, flags = RT_HALIGN_LEFT, text = 3), # description,
+				MultiContentEntryText(pos = (200, 1), size = (260, 30), font = 0, flags = RT_HALIGN_LEFT, text = 4), # language,
+				MultiContentEntryText(pos = (485, 5), size = (25, 30), font = 1, flags = RT_HALIGN_LEFT, text = 5), # selection,
+				], True, "showNever"),
+				"notselected": (30, [
+				MultiContentEntryText(pos = (0, 1), size = (35, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # key,
+				MultiContentEntryText(pos = (20, 1), size = (50, 30), font = 0, flags = RT_HALIGN_LEFT, text = 2), # number,
+				MultiContentEntryText(pos = (88, 1), size = (100, 30), font = 0, flags = RT_HALIGN_LEFT, text = 3), # description,
+				MultiContentEntryText(pos = (200, 1), size = (260, 30), font = 0, flags = RT_HALIGN_LEFT, text = 4), # language,
+				MultiContentEntryText(pos = (485, 5), size = (25, 30), font = 1, flags = RT_HALIGN_LEFT, text = 5), # selection,
+				], False, "showNever")
+				},
+				"fonts": [gFont("Regular", 21), gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<!-- <eLabel name="screenname" text="AudioSelection" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>   -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- subtitle long press - red button -->
+	<screen name="QuickSubtitlesConfigMenu" position="50,84" size="480,300" title="Subtitle settings">
+		<widget name="config" textOffset="5,0" position="5,5" size="480,300" font="Regular;18" secondfont="Regular;18" foregroundColor="fg1" backgroundColor="messagebox-bg" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30"  valign="center" transparent="1" zPosition="1"  />
+		<widget name="videofps" position="5,270" size="470,20" font="Regular;16" foregroundColor="fg2" backgroundColor="messagebox-bg" valign="center" halign="left" transparent="1" zPosition="1" />
+		<!-- <eLabel name="screenname" text="QuickSubtitlesConfigMenu" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- ButtonSetup -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ButtonSetup.py -->
+	<!-- hotkey buttons -->
+	<screen name="ButtonSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-pig" />
+		<widget name="list" position="86,143" size="790,390" foregroundColor="fg1" backgroundColor="bb-mm" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<ePixmap position="86,560" size="790,2" pixmap="div-h.png" alphatest="blend" />
+		<widget name="choosen" position="86,565" size="790,90" foregroundColor="fg1" backgroundColor="bb-mm" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
+		<widget name="description" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+        	<ePixmap pixmap="v-buttons/key_exit.png" position="1163,668" size="38,30" alphatest="blend" zPosition="3" />
+		<!-- <eLabel name="screenname" text="ButtonSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>    -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="ButtonSetupSelect" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="ButtonSetup" />
+		<panel name="2RG-Bot" />
+		<!-- <eLabel name="screenname" text="ButtonSetupSelect" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- ChoiceBox -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ChoiceBox.py -->
+	<screen name="ChoiceBox" position="center,center" size="520,130" zPosition="5">
+		<widget name="text" position="0,0" size="520,0" font="Regular;22" />
+		<widget name="list" position="100,100" size="520,0" enableWrapAround="1" />
+		<applet type="onLayoutFinish">self.autoResize()</applet>
+		<!-- <eLabel name="screenname" text="ChoiceBox" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- Console -->
+	<!--  https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Console.py -->
+	<screen name="Console" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-pig" />
+		<widget name="text" position="86,144" size="795,511" font="Console;16" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" zPosition="3" />
+		<!-- <eLabel name="screenname" text="Console" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="HarddiskSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" zPosition="1" />
+		<widget name="hddlist" textOffset="86,8" position="0,285" size="950,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" scrollbarMode="showNever" transparent="1"  zPosition="2" />
+                <ePixmap pixmap="v-backgrounds/large-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+		<!-- <eLabel name="screenname" text="HarddiskSelection" position="0,0" size="1280,20" font="Regular;14" backgroundColor="green" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- HarddiskSetup -->
+	<!--  https://github.com/openatv/enigma2/blob/master/lib/python/Screens/HarddiskSetup.py  -->
+	<screen name="HarddiskSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" zPosition="1" />
+		<widget name="model" position="86,285" size="790,50" font="Regular;26" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" transparent="1" zPosition="2" />
+		<widget name="capacity" position="86,335" size="790,50" font="Regular;26" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" transparent="1" zPosition="2"  />
+		<widget name="bus" position="86,385" size="790,50" font="Regular;26" foregroundColor="fg1" backgroundColor="bg-mm-dark" valign="center" transparent="1" zPosition="2" />
+		<ePixmap pixmap="v-buttons/key_red.png" position="86,668" size="30,30" alphatest="blend" zPosition="2" />
+		<widget name="initializetext" position="116,668" size="210,30" font="Regular;22" foregroundColor="fg3" backgroundColor="bg-bm" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<!-- <eLabel name="screenname" text="HarddiskSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- infoBarGenerics -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/InfoBarGenerics.py -->
+	<screen name="BufferIndicator" title="Channel" position="c-160,45" size="320,35" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="status" position="0,0" size="320,35" font="Regular;26" foregroundColor="fg1" backgroundColor="transparent" borderColor="black" borderWidth="2" valign="center" halign="center" transparent="1" zPosition="100" />
+		<!-- <eLabel name="screenname" text="BufferIndicator" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="NumberZap" position="108,593" size="240,81" backgroundColor="messagebox-bg" flags="wfNoBorder">
+		<widget name="number" position="15,5" size="210,38" font="Regular;25" foregroundColor="fg1" backgroundColor="messagebox-bg" borderWidth="0" valign="center" halign="center" transparent="1" zPosition="1" />
+		<widget name="servicename" position="15,45" size="210,38" font="Regular;25" foregroundColor="fg2" backgroundColor="messagebox-bg" borderWidth="0" valign="center" halign="center" noWrap="1" transparent="1" zPosition="1" />
+		<!-- <eLabel name="screenname" text="NumberZap" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="NumberZapPicon" position="108,593" size="240,81" backgroundColor="messagebox-bg" flags="wfNoBorder">
+		<widget name="number" position="15,5" size="210,38" font="Regular;25" foregroundColor="fg1" backgroundColor="messagebox-bg" borderWidth="0" valign="center" halign="center" transparent="1" zPosition="1" />
+		<widget name="servicename" position="15,45" size="210,38" font="Regular;25" foregroundColor="fg2" backgroundColor="messagebox-bg" borderWidth="0" valign="center" halign="center" noWrap="1" transparent="1" zPosition="1" />
+	         <!-- <eLabel name="screenname" text="NumberZapPicon" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- InputBox -->
+	<!-- quick record - set duration -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/InputBox.py -->
+	<screen name="InputBox" position="center,center" size=" 560, 70" backgroundColor="messagebox-bg">
+		<widget name="text" position="10,10" size="540,30" font="Regular;24" foregroundColor="fg1" backgroundColor="messagebox-bg" valign="center" halign="center" />
+		<widget name="input" position="10,60" size="540,30" font="Regular;22" foregroundColor="fg1" backgroundColor="messagebox-bg" valign="center" halign="center" />
+		<!-- <eLabel name="screenname" text="InputBox" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	 <!-- checked -->
+	<!-- parental control pin -->
+	<screen name="PinInput" position="center,center" size="500,170">
+		<widget name="service" position="10,10" size="480,25" font="Regular;20" />
+		<widget name="text" position="10,40" size="480,25" font="Regular;20" halign="center" />
+		<widget name="tries" position="10,70" size="480,25" font="Regular;20" halign="center" />
+		<widget name="input" position="10,110" size="480,40" font="Regular;50" halign="center" />
+		<!-- <eLabel name="screenname" text="PinInput" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	 <!-- checked -->
+	<screen name="PinInputPopup" position="center,center" size="500,170">
+		<widget name="service" position="10,10" size="480,25" font="Regular;20" />
+		<widget name="text" position="10,40" size="480,25" font="Regular;20" halign="center" />
+		<widget name="tries" position="10,70" size="480,25" font="Regular;20" halign="center" />
+		<widget name="input" position="10,110" size="480,40" font="Regular;50" halign="center" />
+		<!-- <eLabel name="screenname" text="PinInputPopup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!--  ParentalControlSetup -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ParentalControlSetup.py -->
+	<!-- parental control -->
+	<screen name="ParentalControlSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<!-- <eLabel name="screenname" text="ParentalControlSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="ParentalControlChangePin" position="center,center" size="500,80">
+		<widget name="config" textOffset="5,0" position="10,10" size="480,60" font="Regular;20" secondfont="Regular;20" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" itemHeight="30" transparent="1"/>
+		<!-- <eLabel name="screenname" text="ParentalControlChangePin" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- InputDeviceSetup -->
+	<screen name="InputDeviceSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" />
+		
+		<widget source="list" render="Listbox" position="0,285" size="907,420" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-60-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+			                                                   MultiContentEntryPixmapAlphaBlend(pos = (86, 5), size = (54, 54), png = 2), # index 2 is the interface pixmap
+                                                     	                   MultiContentEntryText(pos = (151, 0), size = (570, 60), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 1), # index 1 is the interface name
+								],
+                                                                "fonts": [gFont("Regular", 24),gFont("Regular", 21)],
+                                                                "itemHeight": 60
+							}</convert>
+		</widget>
+		<panel name="2RG-Top-Source" />
+		<ePixmap pixmap="v-buttons/key_ok.png" position="1163,668" size="30,30" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="v-backgrounds/large-gradient.png" position="0,e-35" size="1280,35" alphatest="blend" zPosition="10" />
+		<panel name="introduction-template" />
+		<!-- <eLabel name="screenname" text="InputDeviceSelection" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="InputDeviceSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<panel name="introduction-template" />
+		<!-- <eLabel name="screenname" text="InputDeviceSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- Ipkg -->
+	<!-- ipk install progress bar -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Ipkg.py -->
+	<screen name="Ipkg" position="center,center" size="550,120">
+		<widget name="activityslider" position="0,0" size="550,5" pixmap="v-progressbars/progress-550-5.png" zPosition="3" />
+		<widget name="package" position="10,30" size="550,25" font="Regular;18" foregroundColor="fg1" backgroundColor="messagebox-bg" noWrap="1" transparent="1"  />
+		<widget name="status" position="10,60" size="550,45" font="Regular;18" foregroundColor="fg1" backgroundColor="messagebox-bg" noWrap="1" transparent="1"  />
+		<widget name="slider" position="10,100" size="530,15" pixmap="v-progressbars/progress-550-15.png" borderWidth="1" borderColor="white" zPosition="3" />
+		<!-- <eLabel name="screenname" text="Ipkg" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- TaskView -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/TaskView.py-->
+	<!-- shown on initialise hdd -->
+	<screen name="JobView" position="center,center" size="520,250">
+		<widget source="job_name" render="Label" position="20,0" size="480,60" font="Regular;26" foregroundColor="fg1" backgroundColor="messagebox-bg" />
+		<widget source="job_task" render="Label" position="20,30" size="480,50" font="Regular;21" foregroundColor="fg1" backgroundColor="messagebox-bg" />
+		<widget source="job_progress" render="Progress" position="20,62" size="480,36" borderWidth="2" backgroundColor="colour2" />
+		<widget source="job_progress" render="Label" position="20,62" size="480,36" font="Regular;28" foregroundColor="selected" backgroundColor="colour2" valign="center" halign="center" transparent="1" zPosition="2" >
+			<convert type="JobView" />
+		</widget>
+		<widget source="job_status" render="Label" position="20,112" size="480,26" font="Regular;21" foregroundColor="fg1" backgroundColor="messagebox-bg" />
+		<widget name="config" textOffset="10,0" position="20,154" size="480,30" scrollbarMode="showNever" transparent="1" />
+		<widget source="cancelable" render="Pixmap" pixmap="v-buttons/key_red.png" position="20,200" size="30,30" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="cancelable" render="FixedLabel" text="Cancel" position="50,200" size="115,30" font="Regular;22" foregroundColor="fg3" backgroundColor="messagebox-bg" halign="left" valign="center" transparent="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="finished" render="Pixmap" pixmap="v-buttons/key_green.png" position="240,200" size="30,30" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="finished" render="FixedLabel" text="OK" position="270,200" size="115,30" font="Regular;22" foregroundColor="fg3" backgroundColor="messagebox-bg" halign="left" valign="center" transparent="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="backgroundable" render="Pixmap" pixmap="v-buttons/key_blue.png" position="250,200" size="30,30" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="backgroundable" render="FixedLabel" text="Continue in background" position="280,200" size="260,30" font="Regular;22" foregroundColor="fg3" backgroundColor="messagebox-bg" halign="left" valign="center" transparent="1">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!-- <eLabel name="screenname" text="JobView" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- LanguageSelection -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/LanguageSelection.py -->
+	<screen name="LanguageSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent" title="Language selection">
+		<panel name="v-template2-pig" />
+		<widget source="languages" render="Listbox" position="0,143" size="907,500" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryPixmapAlphaBlend(pos = (86,5), size = (60,40), png = 2), # index 2 is the pixmap,
+				MultiContentEntryText(pos = (186,0), size = (360,50), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the language name
+			
+				],
+				"fonts": [gFont("Regular",21)],
+				"itemHeight": 50
+				}</convert>
+		</widget>
+		<panel name="4RGYB-Bot" />
+		<ePixmap pixmap="v-buttons/key_ok.png" position="1163,668" size="30,30" alphatest="blend" zPosition="3" />
+		<!-- <eLabel name="screenname" text="LanguageSelection" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- LocationBox -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/LocationBox.py -->
+	<screen name="LocationBox" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-pig" />
+		<widget name="text" position="86,143" size="795,28" font="Regular;21" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<ePixmap position="86,172" size="795,2" pixmap="div-h.png" alphatest="blend" />
+		<widget name="target" position="86,180" size="595,28" font="Regular;21" foregroundColor="fg2" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="targetfreespace" position="681,180" size="200,28" font="Regular;21" foregroundColor="fg3" backgroundColor="bg-mm-dark" halign="right" transparent="1" />
+		<widget name="filelist" position="86,220" size="795,240" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showOnDemand" selectionDisabled="1" enableWrapAround="1" transparent="1" zPosition="1"  />
+		<ePixmap position="86,480" size="795,2" pixmap="div-h.png" alphatest="blend" />
+		<widget name="textbook" position="86,492" size="795,28" font="Regular;21" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="booklist" position="86,532" size="795,120" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" zPosition="2"  />
+		<panel position="86,668" size="0,30">
+			<panel name="red-button-widget" />
+			<widget name="key_red" position="30,0" size="175,30" font="Regular;22" foregroundColor="button-bot" backgroundColor="button-bg" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="281,668" size="0,30">
+			<panel name="green-button-widget" />
+			<widget name="key_green" position="30,0" size="175,30" font="Regular;22" foregroundColor="button-bot" backgroundColor="button-bg" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="476,668" size="0,30">
+			<panel name="yellow-button-widget" />
+			<widget name="key_yellow" position="30,0" size="175,30" font="Regular;22" foregroundColor="button-bot" backgroundColor="button-bg" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		</panel>
+		<panel position="671,668" size="0,30">
+			<panel name="blue-button-widget" />
+			<widget name="key_blue" position="30,0" size="185,30" font="Regular;22" foregroundColor="button-bot" backgroundColor="button-bg" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		</panel>
+		<ePixmap pixmap="v-buttons/key_plus.png" position="1083,668" size="30,30" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="v-buttons/key_minus.png" position="1113,668" size="30,30" alphatest="blend" zPosition="3" />
+		<ePixmap pixmap="v-buttons/key_menu.png" position="1163,668" size="38,30" alphatest="blend" zPosition="3" />
+		<!-- <eLabel name="screenname" text="LocationBox" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- LogManager -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/LogManager.py -->
+	<!-- show in extensions -->
+	<screen name="LogManager" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent" title="Log Manager">
+		<panel name="v-template2-pig" />
+		<widget name="list" position="86,143" size="795,510" font="Regular; 21" iconMargin="5" foregroundColor="fg1"  backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" zPosition="5" />
+		<panel name="4RGYB-Bot" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
+		<!-- <eLabel name="screenname" text="LogManager" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<screen name="LogManagerViewLog" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent" title="Log Manager">
+		<panel name="v-template2-pig" />
+		<widget name="list" position="86,143" size="795,470" font="Console;16"  foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" zPosition="3"/>
+		<panel name="1R-Bot" />
+		<!-- <eLabel name="screenname" text="LogManagerViewLog" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- send log -->
+	<screen name="LogManagerFb" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-pig" />
+		<widget name="list" position="86,143" size="795,510" font="Regular; 21" iconMargin="5" foregroundColor="fg1"  backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" alphatest="blend" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" zPosition="5" />
+		<panel name="4RGYB-Bot" />
+		<!-- <eLabel name="screenname" text="LogManagerFb" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- MessageBox -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/MessageBox.py -->
+	<screen name="MessageBoxTemplate">
+		<widget name="text" position="65,8" size="520,0" font="Regular;22" />
+		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="0,0" size="53,53" alphatest="blend" />
+		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="0,0" size="53,53" alphatest="blend" />
+		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="0,0" size="53,53" alphatest="blend" />
+		<widget name="list" textOffset="10,0" position="100,100" size="500,0" />
+		<applet type="onLayoutFinish">self.autoResize()</applet>
+	</screen>
+	
+	<!-- checked -->
+	<screen name="MessageBox" position="center,center" size="520,10" title="Message">
+		<panel name="MessageBoxTemplate" />
+		<!-- <eLabel name="screenname" text="MessageBox" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->	
+	<screen name="MessageBoxSimple" position="center,center" size="520,10" title="Message">
+		<panel name="MessageBoxTemplate" />
+		<!-- <eLabel name="screenname" text="MessageBoxSimple" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- MinuteInput -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/MinuteInput.py -->
+	<screen name="MinuteInput" position="center,center" size="280,60">
+		<widget name="minutes" position="80,15" size="160,25" halign="right" font="Regular;23" transparent="1" />
+		<!-- <eLabel name="screenname" text="MinuteInput" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- Mute -->
+	<screen name="Mute" flags="wfNoBorder" position="e-95,20" size="75,75" zPosition="10" backgroundColor="transparent">
+		<ePixmap pixmap="v-icons/mute.png" position="0,0" size="75,75" alphatest="blend" />
+	</screen>
+	
+	<!-- checked -->
+	<!-- NumericalTextInputHelpDialog -->
+	<!-- input helper text -->
+	<screen name="NumericalTextInputHelpDialog" position="0,0" zPosition="10" size="1280,40" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap pixmap="v-backgrounds/helper-text.png" position="0,e-40" size="1280,40" zPosition="9" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_1.png" position="30,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_2.png" position="130,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_3.png" position="230,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_4.png" position="330,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_5.png" position="430,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_6.png" position="530,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_7.png" position="630,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_8.png" position="730,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_9.png" position="830,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_0.png" position="930,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_text.png" position="1123,e-35" size="35,30" zPosition="10" alphatest="blend" />
+		<widget name="key1" position="65,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key2" position="165,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key3" position="265,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key4" position="365,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key5" position="465,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key6" position="565,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key7" position="665,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key8" position="765,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key9" position="865,e-40" size="70,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="help1" position="0,720" size="0,0" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="key0" position="965,e-40" size="120,40" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<widget name="help2" position="0,720" size="0,0" font="Regular;12" foregroundColor="fg1" backgroundColor="black" valign="center" halign="left" transparent="1" zPosition="12" />
+		<!-- <eLabel name="screenname" text="NumericalTextInputHelpDialog" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- PiPSetup -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/PiPSetup.py -->
+	<screen name="PiPSetup" position="center,center" size="600,150" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="text" position="0,0" size="600,150" font="Regular;23" />
+	</screen>
+	
+	<!-- PictureInPicture -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/PictureInPicture.py -->
+	<screen name="PictureInPicture" position="400,60" zPosition="-1" size="240,192" flags="wfNoBorder">
+		<widget name="video" position="0,0" size="240,192" backgroundColor="transparent" />
+	</screen>
+	
+	<!-- checked -->
+	<screen name="QuitMainloopScreen" flags="wfNoBorder" position="fill">
+		<ePixmap pixmap="v-backgrounds/reboot.png" position="0,0" size="1280,720" alphatest="blend" zPosition="10" />
+		<widget name="text" position="center,520" size="720,100" font="Regular;22" foregroundColor="fg1" backgroundColor="reboot"  halign="center" transparent="1" zPosition="11" />
+		<!-- <eLabel name="screenname" text="QuitMainloopScreen" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!--  Satconfig -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Satconfig.py -->
+	<!-- tuner configuration -->
+	<screen name="NimSelection" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="v-template2-pig" />
+		<widget source="nimlist" render="Listbox" position="0,144" size="907,480" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-70-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (86,0), size = (778,25), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
+				MultiContentEntryText(pos = (86,25), size = (778,45), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
+				],
+				"fonts": [gFont("Regular",21), gFont("Regular",18)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+		<panel name="3RGY-Bot-Source" />
+		<!-- <eLabel name="screenname" text="NimSelection" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+        <!-- checked -->
+	<!-- tuner configuration - selected -->
+	<screen name="NimSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template1-des-pig" />
+		<ePixmap pixmap="v-backgrounds/left-bg.png" position="0,251" size="914,468" alphatest="blend" zPosition="1" />
+		<widget name="config" textOffset="86,0" position="0,285" size="950,435" font="Regular;20" secondfont="Regular;20" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-907-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="50" valign="center" enableWrapAround="1" transparent="1" scrollbarMode="showNever" zPosition="2" />
+
+                <panel position="86,668" size="0,30">
+			<panel name="R-Source-bot" />
+		</panel>
+		<panel position="266,668" size="0,30">
+			<panel name="G-Source-bot" />
+		</panel>
+		<panel position="446,668" size="0,30">
+			<panel name="yellow-button-icon" />
+			<widget source="key_yellow" render="Label" position="30,0" size="200,30" font="Regular;22" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="button-top" backgroundColor="button-top-bg" zPosition="2" />
+		</panel>
+		<panel position="686,668" size="0,30">
+			<panel name="B-Source-bot" />
+		</panel>
+		 <!-- <eLabel name="screenname" text="NimSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- tuner configuration - Mode - Positioner (selecting satellites) -->
+	<screen name="SelectSatsEntryScreen" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-pig" />
+		<panel name="4RGYB-Bot" />
+		<widget name="list" position="86,144" size="790,510" scrollbarMode="showOnDemand" zPosition="2" itemHeight="30" />
+		<widget name="hint" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+		<!-- <eLabel name="screenname" text="SelectSatsEntryScreen" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- ScanSetup -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ScanSetup.py -->
+	<screen name="ScanSetup" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1" title="Manual Scan">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<widget name="introduction" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+		<!-- <eLabel name="screenname" text="ScanSetup" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	
+	</screen>
+	
+	<!-- checked -->
+	<!-- automatic scan -->
+	<screen name="ScanSimple" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="setup-template" />
+		<panel name="2RG-Top-Source" />
+		<widget name="footer" position="922,285" size="278,435" font="Regular;24" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1" />
+		<!-- <eLabel name="screenname" text="ScanSimple" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- Screensaver -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ScreenSaver.py -->
+	<screen name="Screensaver" position="fill" flags="wfNoBorder">
+		<eLabel position="0,0" size="1280,720" backgroundColor="#54111112" zPosition="0" />
+		<widget name="picture" pixmap="v-backgrounds/screensaver.png" position="0,0" size="300,165" alphatest="blend" zPosition="1" />
+		<!-- <eLabel name="screenname" text="Screensaver" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- ServiceScan -->
+	<!--https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ServiceScan.py-->
+	<screen name="ServiceScan" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="v-template2-pig" />
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.png" position="86,144" size="64,64" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.png" position="86,144" size="64,64" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.png" position="86,144" size="64,64" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="network" position="186,152" size="690,24" font="Regular;21" valign="center" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="transponder" position="186,184" size="690,24" font="Regular;21" foregroundColor="fg2" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="scan_state" position="86,226" zPosition="2" size="795,24" font="Regular;18" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="pass" position="86,226" zPosition="2" size="795,24" font="Regular;18" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<widget name="scan_progress" position="86,260" size="790,20" pixmap="v-progressbars/progress-790-20.png" borderWidth="1" borderColor="white" />
+		<widget name="servicelist" position="86,290" size="790,350" selectionDisabled="1" foregroundColor="fg1" backgroundColor="bg-mm-dark" transparent="1" />
+		<panel name="2RG-Bot" />
+		<!-- <eLabel name="screenname" text="ServiceScan" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- SleepTimerEdit via standby menu -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/SleepTimerEdit.py -->
+	<screen name="SleepTimerEdit" position="center,center" size="500,140" title="Sleep Timer" backgroundColor="messagebox-bg">
+		<widget name="config" textOffset="10,0" position="0,0" size="500,60" font="Regular; 20" secondfont="Regular; 20" foregroundColor="fg1" backgroundColor="messagebox-bg" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="30" enableWrapAround="1" transparent="1" />
+		<panel position="0,110" size="0,30">
+			<panel name="R-Source-grey" />
+		</panel>
+		<panel position="200,110" size="0,30">
+			<panel name="G-Source-grey" />
+		</panel>
+		<widget name="description" position="10,70" size="500,26" font="Regular; 16" foregroundColor="fg1" backgroundColor="messagebox-bg" valign="center" halign="center" />
+		<!-- <eLabel name="screenname" text="SleepTimerEdit" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- record - add recording (enter recording endtime) -->
+	<screen name="TimeDateInput" position="center,center" size="400,140">
+		<widget name="config" textOffset="10,0" position="10,0" size="380,90" font="Regular; 20" secondfont="Regular; 20" foregroundColor="fg1" backgroundColor="messagebox-bg" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-30-1280-square.png" backgroundPixmap="v-selectbars/selectbar-bg.png" alphatest="blend" itemHeight="30" enableWrapAround="1" transparent="1" />
+		<widget name="cancel" pixmap="v-buttons/key_red.png" position="10,100" size="30,30" alphatest="blend" />
+		<widget name="canceltext" position="40,100" zPosition="1" size="115,30" font="Regular;22" halign="left" valign="center" transparent="1" foregroundColor="fg3" backgroundColor="messagebox-bg" />
+		<widget name="ok" pixmap="v-buttons/key_green.png" position="260,100" size="30,30" alphatest="blend" />
+		<widget name="oktext" position="290,100" zPosition="1" size="115,30" font="Regular;22" halign="left" valign="center" transparent="1" foregroundColor="fg3" backgroundColor="messagebox-bg" />
+		<!-- <eLabel name="screenname" text="TimeDateInput" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- PVRState -->
+	<!-- timeshift PVR screens -->
+	<screen name="TimeshiftState" position="0,0" size="1280,720" backgroundColor="transparent" title="InfoBar" flags="wfNoBorder">
+		<panel position="55,592" size="1170,80">
+		       	<widget name="PTSSeekBack" position="178,11" size="810,13" pixmap="v-icons/slider-bg.png" alphatest="blend" zPosition="1" />
+			<ePixmap pixmap="v-backgrounds/playbar.png" position="0,0" size="1170,80" alphatest="blend" zPosition="2" />
+			<widget name="statusicon" position="644,44" size="31,24" pixmaps="v-icons/play.png,v-icons/pause.png,v-icons/stop.png,v-icons/forward.png,v-icons/backward.png,v-icons/slow.png" alphatest="blend" zPosition="5" />
+			<widget name="speed" position="605,40" size="34,30" font="Regular;28" foregroundColor="fg1" backgroundColor="black" valign="top" halign="right" transparent="1" zPosition="6" />
+			<widget source="session.CurrentService" render="Label" position="1037,2" size="100,30" font="Regular;28" foregroundColor="white" backgroundColor="playbar" valign="center" halign="right" transparent="1" zPosition="6">
+				<convert type="ServicePosition">Length</convert>
+			</widget>
+			<widget source="session.CurrentService" render="Label" position="500,40" size="100,30" font="Regular;28" foregroundColor="white" backgroundColor="black" valign="top" halign="left" transparent="1" zPosition="6">
+				<convert type="ServicePosition">Summary</convert>
+			</widget>
+			<!--<widget name="PTSSeekPointer" position="166,3" size="14,32" pixmap="v-icons/position-pointer.png" alphatest="blend" zPosition="4"/>   -->
+		
+			<widget source="session.CurrentService" render="Progress" position="178,11" size="810,13" zPosition="2" pixmap="v-icons/slider.png" transparent="1">
+				<convert type="ServicePosition">Position</convert>
+			</widget>
+		</panel>
+		<!-- <eLabel name="screenname" text="TimeshiftState" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/> -->
+	</screen>
+	
+	<!-- checked -->
+	<!-- UnhandledKey -->
+	<screen name="UnhandledKey" flags="wfNoBorder" position="e-95,20" size="75,75" zPosition="10" backgroundColor="transparent">
+		<widget name="UnhandledKeyPixmap" pixmap="v-icons/unhandled.png" position="0,0" size="75,75" alphatest="blend" />
+	</screen>
+	
+	<!-- checked -->
+	<!-- Volume -->
+	<screen name="Volume" position="center,20" zPosition="10" size="450,75" title="Volume" flags="wfNoBorder" backgroundColor="transparent">
+		<ePixmap pixmap="v-icons/volume.png" position="0,0" size="450,75" alphatest="blend" zPosition="11" />
+		<widget name="Volume" pixmap="v-icons/volume-bar.png" position="95,34" size="260,6" alphatest="blend" zPosition="12" />
+		<widget render="VolumeText" source="global.CurrentTime" position="375,0" size="75,75" font="Regular;24" foregroundColor="white" backgroundColor="black" halign="center" valign="center" zPosition="13" transparent="1" />
+	</screen>
+	
+	<!-- checked -->
+	<!-- VirtualKeyBoard -->
+	<!--  https://github.com/openatv/enigma2/blob/master/lib/python/Screens/VirtualKeyBoard.py -->
+	<screen name="VirtualKeyBoard" position="center,center" size="560,350" zPosition="99" title="Virtual Keyboard" backgroundColor="messagebox-bg">
+		<ePixmap pixmap="skin_default/vkey_text.png" position="9,35" zPosition="-4" size="542,52" alphatest="blend" />
+		<widget name="header" position="10,10" size="500,20" font="Regular;20" transparent="1" noWrap="1" />
+		<widget name="text" position="12,35" size="536,46" font="Regular;25" valign="center" transparent="1" noWrap="1" halign="right" />
+		<widget name="list" position="10,100" size="540,225" selectionDisabled="1" transparent="1" />
+	</screen>
+	
+	<!-- checked -->
+	<screen name="SubtitleDisplay" position="fill" zPosition="-2" flags="wfNoBorder" backgroundColor="transparent">
+	</screen>
+	
+	<screen name="Subtitles" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1">
+		<panel name="template1" />
+		<panel name="setup-template" />
+		<panel name="4RGYB-Source" />
+		<!-- <eLabel name="screenname" text="Subtitles" position="0,0" size="1280,20" font="Regular;14" backgroundColor="red" zPosition="20" transparent="0"/>  -->
+	</screen>
+</skin>
+
+
